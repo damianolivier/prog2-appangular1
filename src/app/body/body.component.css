@@ -5,6 +5,7 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-align: center;
   }
 
   h1,
@@ -166,6 +167,8 @@
     margin-top: 8px;
     overflow: hidden;
     background-color: rgb(15, 15, 16);
+    text-align: center;
+    margin: 8px auto;
   }
 
   .terminal::before {
