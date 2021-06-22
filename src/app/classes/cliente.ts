@@ -22,4 +22,12 @@ export class Cliente {
         this._edad = edad;
     }
 
+    get status():boolean {
+        return this._status;
+    }
+
+    set status(status:boolean) {
+        this._status = status;
+    }
+
 }

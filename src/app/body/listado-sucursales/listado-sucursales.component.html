@@ -1,0 +1,16 @@
+<h1>Sucursales</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Mes</th>
+            <th *ngFor="let sucursal of this.sucursales">{{sucursal.nombre}}</th>
+        </tr>        
+    </thead>
+    <tbody>
+        <tr *ngFor="let mes of meses; let i = index">
+            <td>{{mes}}</td>
+            <td *ngFor="let sucursal of this.sucursales">{{sucursal.getVentas(i)}}</td>
+        </tr>
+    </tbody>
+</table>

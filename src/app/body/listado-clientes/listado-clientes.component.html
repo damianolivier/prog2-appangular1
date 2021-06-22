@@ -1,9 +1,31 @@
 <h1>Listado de Clientes</h1>
 
-<ul>
-    <li>Cliente 1: {{ this.cliente1.nombre }} - Edad: {{ this.cliente1.edad }}</li>
-    <li>Cliente 2: {{ this.cliente2.nombre }} - Edad: {{ this.cliente2.edad }}</li>
-    <li>Cliente 3: {{ this.cliente3.nombre }} - Edad: {{ this.cliente3.edad }}</li>
-    <li>Cliente 4: {{ this.cliente4.nombre }} - Edad: {{ this.cliente4.edad }}</li>
-    <li>Cliente 5: {{ this.cliente5.nombre }} - Edad: {{ this.cliente5.edad }}</li>
+
+<h3 *ngIf="this.clientes.length == 0">Cargando listado de clientes...</h3>
+<ul *ngIf="this.clientes.length > 0">
+    <li *ngFor="let cliente of this.clientes; let i = index">
+        Cliente {{ i }}: {{ cliente.nombre }} - Edad: {{ cliente.edad }} 
+        <span *ngIf="cliente.status" style="color: green;">Cliente activo</span>
+        <span *ngIf="!cliente.status" style="color:red;">Cliente inactivo</span>
+        
+
+        <div [ngSwitch]="cliente.edad">
+            <p *ngSwitchCase="21">
+                mayor de 21
+            </p>
+            <p *ngSwitchCase="22">
+                otra cosa
+            </p>
+            <p *ngSwitchCase="23">
+                veintitres
+            </p>
+            <p *ngSwitchCase="24">
+                veinticuatro
+            </p>
+            <p *ngSwitchDefault>
+                ninguna de las anteriores
+            </p>
+        </div>
+        
+    </li>
 </ul>

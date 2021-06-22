@@ -17,10 +17,12 @@ export class ListadoClientesComponent implements OnInit {
   constructor() { 
     this.cliente1 = new Cliente('Guido', 26, false);
     this.cliente2 = new Cliente('', 0, false);
-    this.cliente3 = new Cliente('', 0, false);
+    this.cliente3 = new Cliente('', 0, true);
     this.cliente4 = new Cliente('', 0, false);
     this.cliente5 = new Cliente('', 0, false);
-    this.clientes = new Array(this.cliente1, this.cliente2, this.cliente3, this.cliente4, this.cliente5);
+    this.clientes = new Array();
+    //this.clientes = new Array(this.cliente1, this.cliente2, this.cliente3, this.cliente4, this.cliente5);
+
   }
 
   ngOnInit(): void {
@@ -35,7 +37,8 @@ export class ListadoClientesComponent implements OnInit {
     this.cliente3.edad = 26;
     this.cliente4.edad = 21;
     this.cliente5.edad = 28;
-
+    
+    this.clientes = new Array(this.cliente1, this.cliente2, this.cliente3, this.cliente4, this.cliente5);
   }
 
 }
